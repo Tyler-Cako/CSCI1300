@@ -4,7 +4,7 @@
 // Project 1 - Problem #1
 #include <iostream>
 #include <string>
-#include <typeinfo>
+#include <cassert>
 using namespace std;
 
 bool isValidNote(string note)
@@ -49,13 +49,12 @@ bool isValidNote(string note)
 
 int main()
 {
-    // Test function in main()
-    
-    string input;
+    // Test valid note:
+    assert(isValidNote("A2") == true);
 
-    cout << "Enter input" << endl;
+    // Test Invalid note:
+    assert(isValidNote("HE") == false);    
 
-    cin >> input;
-
-    cout << isValidNote(input) << endl;
+    // Test Empty Input
+    assert(isValidNote("") == false); 
 }

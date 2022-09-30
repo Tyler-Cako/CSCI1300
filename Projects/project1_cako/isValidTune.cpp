@@ -4,6 +4,7 @@
 // Project 1 - Problem #2
 #include <iostream>
 #include <string>
+#include <cassert>
 using namespace std;
 
 bool isValidTune(string tune)
@@ -24,6 +25,13 @@ bool isValidTune(string tune)
     for (int i = 0; i < tune.length(); i++)
     {
         char character = tune[i];
+
+        // Check if odd
+        if (tune.length()%2 != 0)
+        {
+            is_true = false;
+            return is_true;
+        }
 
         // Check if note letter  is valid
         if (character != 'A' && character != 'B' && character != 'C' && character != 'D' && character != 'E' && character != 'F' && character != 'G' && character != '0' && character != '1' && character != '2' && character != '3' && character != '4' && character != '5' && character != '6' && character != '7' && character != '8' && character != '9')
@@ -51,10 +59,12 @@ bool isValidTune(string tune)
 
 int main()
 {
-    string value = "";
+    // Test valid Tune:
+    assert(isValidTune("A2E3") == true);
 
-    cout << "Enter a tune" << endl;
-    cin >> value;
+    // Test Invalid Tune:
+    assert(isValidTune("HE") == false);    
 
-    cout << isValidTune(value) << endl;
+    // Test Empty Input
+    assert(isValidTune("") == false); 
 }

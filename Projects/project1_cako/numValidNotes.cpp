@@ -1,9 +1,10 @@
 // CSCI 1300 Fall 2022
 // Author: Tyler Cako
 // Recitation: 308 – Baljot Kaur
-// Project 1 - Problem #2
+// Project 1 - Problem #3
 #include <iostream>
 #include <string>
+#include <cassert>
 using namespace std;
 
 int numValidNotes(string input)
@@ -37,10 +38,12 @@ int numValidNotes(string input)
 
 int main()
 {
-    string value = "";
+    // String with valid notes
+    assert(numValidNotes("ADB3M7G4F") == 2);
 
-    cout << "Enter a string" << endl;
-    cin >> value;
+    // String with invalid notes only
+    assert(numValidNotes("ABCEDEFEGEGA") == 0);    
 
-    cout << numValidNotes(value) << endl;
+    // Test Empty Input
+    assert(numValidNotes("") == 0); 
 }
