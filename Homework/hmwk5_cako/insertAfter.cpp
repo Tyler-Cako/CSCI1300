@@ -31,13 +31,13 @@ bool insertAfter(string input_strings[], int num_elements, int arr_size, int ind
         {
             {
             cout << "test1" << endl;
-            input_strings[index - i] = input_strings[num_elements - i];
+            input_strings[index] = input_strings[num_elements];
             cout << "test2" << endl;
             cout << "test3" << endl;
-            cout << input_strings[i] << endl;
-            cout << input_strings[i + 1] << endl;
-            cout << input_strings[i + 2] << endl;
-            cout << input_strings[i + 3] << endl;
+            //cout << input_strings[i] << endl;
+            //cout << input_strings[i + 1] << endl;
+            //cout << input_strings[i + 2] << endl;
+            //cout << input_strings[i + 3] << endl;
             }
         input_strings[index] = string_to_insert;
         }
@@ -45,7 +45,7 @@ bool insertAfter(string input_strings[], int num_elements, int arr_size, int ind
 
     if (num_elements == (index+1))
     {
-        cout << "numelements = index + 1" << endl;
+        //cout << "numelements = index + 1" << endl;
         input_strings[index + 1] = string_to_insert;
     }
 
@@ -55,14 +55,15 @@ bool insertAfter(string input_strings[], int num_elements, int arr_size, int ind
 int main()
 {
     int size = 5;
-    string input_strings[size] = {"caterpie", "eevee"};
+    string input_strings[5] = {"caterpie", "eevee"};
+    // string input_strings[size] = {"caterpie", "eevee"};
     int num_elements = 2;
     int index = 0;
     string string_to_insert = "bulbasaur";
     // result contains the value returned by insertAfter
     bool result = insertAfter(input_strings, num_elements, size, index, string_to_insert);
     // print result
-    cout << "Function returned value: "<< result << endl;
+    //cout << "Function returned value: "<< result << endl;
     // print array contents
     for(int i = 0; i < size; i++)
     {
