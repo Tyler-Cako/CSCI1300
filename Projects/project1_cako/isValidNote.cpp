@@ -53,7 +53,7 @@ int main()
     assert(isValidNote("A2") == true);
 
     // Test Invalid note:
-    assert(isValidNote("HE") == false);    
+    assert(isValidNote("A22") == false);    
 
     // Test Empty Input
     assert(isValidNote("") == false); 

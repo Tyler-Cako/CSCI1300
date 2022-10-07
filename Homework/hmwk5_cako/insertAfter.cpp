@@ -4,7 +4,6 @@
 // Homework 5 - Problem #3
 #include <iostream>
 #include <cassert>
-#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -22,30 +21,17 @@ bool insertAfter(string input_strings[], int num_elements, int arr_size, int ind
         return 0;
     }
 
-
-
-    if (num_elements > (index + 1))
+    if (num_elements - 1 > index)
     {
-        cout << "numelements > index + 1" << endl;
-        for (int i = 0; i < (num_elements-index); i++)
+        for (int i = (num_elements - 1); i > index; i--)
         {
-            {
-            cout << "test1" << endl;
-            input_strings[index] = input_strings[num_elements];
-            cout << "test2" << endl;
-            cout << "test3" << endl;
-            //cout << input_strings[i] << endl;
-            //cout << input_strings[i + 1] << endl;
-            //cout << input_strings[i + 2] << endl;
-            //cout << input_strings[i + 3] << endl;
-            }
-        input_strings[index] = string_to_insert;
+            input_strings[i + 1] = input_strings[i];
         }
-    }
 
-    if (num_elements == (index+1))
+        input_strings[index + 1] = string_to_insert;
+    }
+    else
     {
-        //cout << "numelements = index + 1" << endl;
         input_strings[index + 1] = string_to_insert;
     }
 
@@ -54,19 +40,40 @@ bool insertAfter(string input_strings[], int num_elements, int arr_size, int ind
 
 int main()
 {
+
+    // Test normal case
+
     int size = 5;
-    string input_strings[5] = {"caterpie", "eevee"};
-    // string input_strings[size] = {"caterpie", "eevee"};
-    int num_elements = 2;
-    int index = 0;
-    string string_to_insert = "bulbasaur";
-    // result contains the value returned by insertAfter
-    bool result = insertAfter(input_strings, num_elements, size, index, string_to_insert);
-    // print result
-    //cout << "Function returned value: "<< result << endl;
-    // print array contents
-    for(int i = 0; i < size; i++)
-    {
-        cout << input_strings[i] << endl;
-    }
+    string inputStrings[5] = {"pikachu", "meowth", "snorlax"};
+    int numElements = 3;
+    int index = 2;
+    string stringToInsert = "clefairy";
+
+    assert(insertAfter(inputStrings, numElements, size, index, stringToInsert) == 1);
+
+    // Test full array
+    size = 5;
+    string inputStrings_2[5] = {"pikachu", "meowth", "snorlax", "charizard", "caterpie"};
+    numElements = 5;
+    index = 2;
+    stringToInsert = "clefairy";
+
+    assert(insertAfter(inputStrings_2, numElements, size, index, stringToInsert) == 0);
+
+    // Test bad index value
+    size = 5;
+    numElements = 3;
+    index = 6;
+    stringToInsert = "clefairy";
+
+    assert(insertAfter(inputStrings, numElements, size, index, stringToInsert) == 0);
+
+    // Test empy array
+    size = 0;
+    string inputStrings_3[0] = {};
+    numElements = 0;
+    index = 0;
+    stringToInsert = "clefairy";
+
+    assert(insertAfter(inputStrings_3, numElements, size, index, stringToInsert) == 0);
 }

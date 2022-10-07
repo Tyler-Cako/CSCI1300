@@ -71,5 +71,25 @@ int main()
     cout << "Sum: " << fixed << setprecision(3) << sum(arr, arr_size) << endl;
     cout << "Avg: " << fixed << setprecision(3) << average(arr, arr_size) << endl;
 
-    //assert(doublesEqual(min(arr[0]), ));
+    // Test standard input:
+
+    assert(doublesEqual(min(arr, arr_size), 1.240));
+    assert(doublesEqual(sum(arr, arr_size), 10.376));
+    assert(doublesEqual(average(arr, arr_size), 3.459));
+
+    // Test single element array
+    double arr_2[] = {0};
+    arr_size = 1;
+
+    assert(doublesEqual(min(arr_2, arr_size), 0));
+    assert(doublesEqual(sum(arr_2, arr_size), 0));
+    assert(doublesEqual(average(arr_2, arr_size), 0));
+
+    // Test decimals
+    double arr_3[] = {32.2821, 0.2987};
+    arr_size = 2;
+
+    assert(doublesEqual(min(arr_3, arr_size), 0.2987));
+    assert(doublesEqual(sum(arr_3, arr_size), 32.581));
+    assert(doublesEqual(average(arr_3, arr_size), 16.290));
 }

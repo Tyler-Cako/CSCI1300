@@ -69,3 +69,5 @@ int main()
     }
     return 0;
 }
+
+// Test cases aren't needed as there is no function to test.
