@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Status.h"
+#include "Cook.h"
 
 using namespace std;
 
@@ -9,12 +10,9 @@ Status::Status(){
     int key_ = 0;
     int anger_ = 0;
     int gold_ = 0;
-    for (int i = 0; i < 5; i++){
-        fullness_[i] = 50;
-    }
-    for (int i = 0; i < 3; i++){
-        cookware_[i] = 0;
-    }
+
+    Cook cook_;
+
     for (int i = 0; i < 5; i++){
         weapons_[i] = 0;
     }
@@ -43,17 +41,9 @@ void Status::setGold(int gold){
 void Status::setArmor(int armor){
     armor_ = armor;
 };
-void Status::setIngredients(int ingredients){
-    ingredients_ = ingredients;
-};
 void Status::setTreasures(int treasures[]){
     for (int i = 0; i < 5; i++){
         treasures_[i] = treasures[i];
-    }
-};
-void Status::setCookware(int cookware[]){
-    for (int i = 0; i < 3; i++){
-        cookware_[i] = cookware[i];
     }
 };
 void Status::setWeapons(int weapons[]){
@@ -87,6 +77,7 @@ int Status::getGold(){
 int Status::getArmor(){
     return armor_;
 };
+/*
 int Status::getIngredients(){
     return ingredients_;
 };
@@ -96,6 +87,7 @@ int Status::getTreasuresAt(int index){
 int Status::getCookwareAt(int index){
     return cookware_[index];
 };
+*/
 int Status::getWeaponAt(int index){
     return weapons_[index];
 };
@@ -117,8 +109,8 @@ cout << "+-------------+" << endl;
 cout << "| INVENTORY   |" << endl;
 cout << "+-------------+" << endl;
 cout << "| Gold        | " << gold_ << endl;
-cout << "| Ingredients | " << ingredients_ << " kg" << endl;
-cout << "| Cookware    | " << "P: " << cookware_[0] << " | F: "<< cookware_[1] << " | C: " << cookware_[2] << endl;
+cout << "| Ingredients | " << cook.getIngredients() << " kg" << endl;
+cout << "| Cookware    | " "P: " << cook.getCookware("pots") << " | F: "<< cook.getCookware("pans]") << " | C: " << cook.getCookware("cauldrons") << endl;
 cout << "| Weapons     | " << "C: " << weapons_[0] << " | S: "<< weapons_[1] << " | R: " << weapons_[2] << " | B: " << weapons_[3] << " | L: " << weapons_[4] << endl;
 cout << "| Armor       | " << armor_ << endl;
 cout << "| Treasures   | " << "R: " << treasures_[0] << " | N: "<< treasures_[1] << " | B: " << treasures_[2] << " | C: " << treasures_[3] << " | G: " << treasures_[4] << endl;
@@ -139,8 +131,8 @@ cout << "+-------------+" << endl;
 cout << "| INVENTORY   |" << endl;
 cout << "+-------------+" << endl;
 cout << "| Gold        | " << gold_ << endl;
-cout << "| Ingredients | " << ingredients_ << " kg" << endl;
-cout << "| Cookware    | " << "P: " << cookware_[0] << " | F: "<< cookware_[1] << " | C: " << cookware_[2] << endl;
+cout << "| Ingredients | " << cook.getIngredients() << " kg" << endl;
+cout << "| Cookware    | " << "P: " << cook.getCookware("pots") << " | F: "<< cook.getCookware("pans]") << " | C: " << cook.getCookware("cauldrons") << endl;
 cout << "| Weapons     | " << "C: " << weapons_[0] << " | S: "<< weapons_[1] << " | R: " << weapons_[2] << " | B: " << weapons_[3] << " | L: " << weapons_[4] << endl;
 cout << "| Armor       | " << armor_ << endl;
 cout << "| Treasures   | " << "R: " << treasures_[0] << " | N: "<< treasures_[1] << " | B: " << treasures_[2] << " | C: " << treasures_[3] << " | G: " << treasures_[4] << endl;
