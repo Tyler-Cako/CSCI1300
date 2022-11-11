@@ -1,0 +1,5 @@
+ilovechip,4,0,0,8,3
+vengefulSauce,4,1,0,8,0
+pacifiedIcecream7,0,-1,0,10,-1
+amazedOtter4,10,-1,0,3,0
+cuisthebest,4,6,0,3,10

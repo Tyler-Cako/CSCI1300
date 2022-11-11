@@ -1,0 +1,3 @@
+spiritedMues,9,10,8,0
+cuboulderalumni,-1,0,9,7
+buffsfootball,5,-1,2,10

@@ -49,6 +49,8 @@
         "typeinfo": "cpp",
         "__hash_table": "cpp",
         "__split_buffer": "cpp",
-        "bitset": "cpp"
-    }
+        "bitset": "cpp",
+        "chrono": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
